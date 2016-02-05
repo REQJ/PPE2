@@ -93,7 +93,7 @@ $langues = array(
 		'faq' => 'http://www.en.wampserver.com/faq.php'
 	),
 	'fr' => array(
-		'langue' => 'Français',
+		'langue' => 'Français test test test',
 		'locale' => 'french',
 		'autreLangue' => 'English Version',
 		'autreLangueLien' => 'en',
