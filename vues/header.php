@@ -6,8 +6,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/js/js-menu.js" />
+		<link rel="stylesheet" href="public/assets/css/main.css" />
+		<link rel="stylesheet" href="public/assets/js/js-menu.js" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 </head>
@@ -37,7 +37,7 @@
 
 					<!-- Logo -->
 						<div id="logo">
-							<span class="image avatar48"><img src="images/hisoka_profil.jpg" alt="" /></span>
+							<span class="image avatar48"><img src="public/images/hisoka_profil.jpg" alt="" /></span>
 							<h1 id="title">JosiMoche</h1>
 						</div>
 

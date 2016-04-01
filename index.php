@@ -1,8 +1,8 @@
 	<?php 
 	include 'config.php';
 	
-	require 'classe/News.php';
-	require 'classe/User.php';
+	//require 'classe/News.php';
+	//require 'classe/User.php';
 	require 'pdo/MyPdo.php';
 	require 'pdo/NewsPdo.php';
 	require 'pdo/UserPdo.php';
