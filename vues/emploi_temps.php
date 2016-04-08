@@ -4,12 +4,22 @@
 
 							<header>
 							<h2>Emploi du Temps</h2>
+                                                        <?php 
+                                                                    $semaine = date('W');
+                                                                    
+                                                                    if($semaine%2 == 0){
+                                                                        echo 'Vous êtes en semaine : B';
+                                                                    }else{
+                                                                        echo 'Vous êtes en semaine : A';
+                                                                    }
+                                                                ?>
                                                         
                                                         
                                                         </head>
 
 </head>
 							</header>
+                                            <h4> Calendrier </h4>
 <a id="single_image" href="public/images/Grandetpetit/maxresdefaultgrand.jpg"><img src="public/images/Grandetpetit/maxresdefault.jpg"></a>
 
 						<table id="emploi">

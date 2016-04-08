@@ -9,7 +9,10 @@
 		<link rel="stylesheet" href="public/assets/css/main.css" />
 		<link rel="stylesheet" href="public/assets/js/js-menu.js" />
                 
+                <!-- script pour aggrandir une image-->
                 <link rel="stylesheet" href="public/assets/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
+                
+                
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -46,14 +49,15 @@
 					<!-- Logo -->
 						<div id="logo">
 							<span class="image avatar48"><img src="public/images/hisoka_profil.jpg" alt="" /></span>
-							<h1 id="title">JosiMoche</h1>
+							<h1 id="title">Nounours39</h1>
 						</div>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.php?action=home" id="Accueil-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Forum</span></a></li>
-								<li><a href="index.php?action=epreuves" id="Description_des_Epreuves-link" class="skel-layers-ignoreHref"><span class="icon fa-binoculars">Description des épreuves</span></a></li>
+								<li><a href="index.php?action=home" id="Accueil-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Accueil</span></a></li>
+								<li><a href="index.php?action=forum" id="Forum-link" class="skel-layers-ignoreHref"><span class="icon fa-comments-o">Forum</span></a></li>
+                                                                <li><a href="index.php?action=epreuves" id="Description_des_Epreuves-link" class="skel-layers-ignoreHref"><span class="icon fa-binoculars">Description des épreuves</span></a></li>
 								<li><a href="index.php?action=emploi_du_temps" id="emploi_du_temps-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Emploi du Temps</span></a></li>
 								<li><a href="index.php?action=portfolio" id="Portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-briefcase">Portfolio</span></a></li>
 								<li><a href="index.php?action=lien_utiles" id="liens_utiles-link" class="skel-layers-ignoreHref"><span class="icon fa-at">Liens utiles</span></a></li>
