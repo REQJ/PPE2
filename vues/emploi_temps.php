@@ -1,9 +1,16 @@
 <!-- Emploi du Temps -->
+
 					<section id="emploi_du_temps" class="three">
 
 							<header>
-								<h2>Emploi du Temps</h2>
+							<h2>Emploi du Temps</h2>
+                                                        
+                                                        
+                                                        </head>
+
+</head>
 							</header>
+<a id="single_image" href="public/images/Grandetpetit/maxresdefaultgrand.jpg"><img src="public/images/Grandetpetit/maxresdefault.jpg"></a>
 
 						<table id="emploi">
 							<tr class="ligneJours">

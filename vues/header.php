@@ -8,13 +8,21 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="public/assets/css/main.css" />
 		<link rel="stylesheet" href="public/assets/js/js-menu.js" />
+                
+                <link rel="stylesheet" href="public/assets/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Afficher la date et l'heure en temps rÃ©el en javascript</title>
+        <script type="text/javascript" src="<?php JS ?>date_heure.js"></script>
+        
+        
 </head>
 
 <body>
 
 <div id="header">
+    
 
 				<div class="top">
 				<!--<div >
