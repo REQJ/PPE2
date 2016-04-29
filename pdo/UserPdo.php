@@ -1,43 +1,53 @@
 <?php
 class UserPdo extends MyPdo
 {
- 	public function __construct(){
-		try
+
+	public static function connexion($login, $mdp){
+              try
 		{
-			parent::__construct();
-		}
-		catch (PDOException $e) {
-		    echo 'Échec lors de la connexion : ' . $e->getMessage();
-		}
- 	} 
-
-
-
- 	public function create($unUser){
- 		try
-		{
-			$requete =$this->connection->prepare('INSERT INTO user(login, password) VALUES(:login,:password)');
-			$requete->bindValue(':login', $unUser->login, PDO::PARAM_STR);
-			$requete->bindValue(':password', $unUser->password, PDO::PARAM_STR);
-			$requete->execute();
-		}
-		catch (PDOException $e) {
-		    echo 'Échec requete : ' . $e->getMessage();
-		}
+                  self::open();
+             $pass_hache = sha1($mdp);
+              var_dump($pass_hache);
+		$reponse = self::$connection->query("SELECT * FROM user WHERE login='$login' AND password='$pass_hache'"); // $mdp
+                $unLogin = $reponse->fetch();
+		
+		$reponse->closeCursor(); 
+		return $unLogin;
+               
+                } catch (PDOException $ex) {
+                echo 'Échec requete : ' . $ex->getMessage();
+              }
  	}
-
- 	public function check($unUser){
- 		try
+        
+        public static function create($login, $mdp){
+              try
 		{
-			$requete =$this->connection->prepare('SELECT count(*) as nb FROM user WHERE login=:login AND password=:password');
-			$requete->bindValue(':login', $unUser->login, PDO::PARAM_STR);
-			$requete->bindValue(':password', $unUser->password, PDO::PARAM_STR);
-			$requete->execute();
-			$ligne = $requete->fetch();
-			return $ligne["nb"];
-		}
-		catch (PDOException $e) {
-		    echo 'Échec requete : ' . $e->getMessage();
-		}
- 	} 	
+               $pass_hache = sha1($mdp);
+		//var_dump($pass_hache);
+                                                
+                        self::open();                        
+                      $req = self::$connection->query("SELECT login FROM user WHERE login='$login'");
+                      $rep = $req->fetch();
+                    //  var_dump($rep);
+                      
+                        if($rep == true)
+                        {
+                         $message="Le nom d'utilisateur éxiste déjà !";
+                         include(VUES."error.php");
+                         header("refresh:2;url=index.php?action=createaccount");
+                        }
+                        else
+                        {                            
+			$requete = self::$connection->query("INSERT INTO user(login, password) VALUES('$login','$pass_hache')");
+                        $message='Compte créé avec succès !';
+                        include(VUES."success.php");    
+                        UserPdo::connexion($login, $pass_hache);
+                        header("refresh:2;url=index.php?action=login");
+                        
+                        }                        
+                
+                } catch (PDOException $ex) {
+                echo 'Échec requete : ' . $ex->getMessage();
+              }
+ 	}
 } 

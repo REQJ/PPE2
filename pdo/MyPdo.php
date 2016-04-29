@@ -1,14 +1,14 @@
 <?php
 class MyPdo
 {
-	protected $connection;
+	protected  static $connection;
  
- 	public function __construct(){
+ 	public static function open(){
 
 		try
 		{
-			$this->connection = new PDO('mysql:host=localhost;dbname=si6;charset=utf8', 'root', '');
-			$this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    self::$connection = new PDO('mysql:host=localhost;dbname=tp1_si6;charset=utf8', 'root', '');
+                    self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 		catch (PDOException $e) {
     		echo 'Échec lors de la connexion : ' . $e->getMessage();
