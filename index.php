@@ -7,6 +7,7 @@
 	//require 'pdo/NewsPdo.php';
 	require 'pdo/UserPdo.php';
         require 'pdo/EmploiPdo.php';
+        require 'pdo/EpreuvePdo.php';
         require 'pdo/AnnoncePdo.php';
         require 'pdo/CommentairePdo.php';
         require 'pdo/ImagePdo.php';
@@ -40,6 +41,7 @@
 					include(VUES."home.php");
 					break;
 				case 'epreuves':
+                                        $lesEpreuves = EpreuvePdo::getAll();
 					include(VUES."epreuve.php");
 					break;
 				case 'emploi_du_temps':
