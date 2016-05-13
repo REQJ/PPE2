@@ -7,7 +7,7 @@ class MyPdo
 
 		try
 		{
-                    self::$connection = new PDO('mysql:host=localhost;dbname=tp1_si6;charset=utf8', 'root', '');
+                    self::$connection = new PDO('mysql:host=localhost;dbname=ppe2;charset=utf8', 'root', '');
                     self::$connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		}
 		catch (PDOException $e) {
