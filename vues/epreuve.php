@@ -12,17 +12,17 @@
                   
                         <div class="accordionButton">
                             <div class="btnTitle">
-                                <p><?php echo $epreuve["NOM_EPREUVE"]?> </p>
-                                <p>   <?php $epreuve["DUREE_EPREUVE"]?></p>
+                                <p><?php echo $epreuve["nom_epreuve"]?> </p>
+                                <p>   <?php $epreuve["duree_epreuve"]?></p>
                             </div>
                             <div class="plusButton"></div>
                                 
                         </div>
 			<div class="accordionContent">
-				<p><?php echo $epreuve["DESCRIPTION_EPREUVE"]?></p>
-                                <p><?php echo $epreuve["COEFFICIENT_EPREUVE"]?></p>
-                                <p><?php echo $epreuve["TYPE_EPREUVE"]?></p>
-                                <p><?php echo $epreuve["DUREE_EPREUVE"]?></p>
+				<p><?php echo $epreuve["description_epreuve"]?></p>
+                                <p><?php echo $epreuve["coefficient_epreuve"]?></p>
+                                <p><?php echo $epreuve["type_epreuve"]?></p>
+                                
                                 
                         </div>
                         <?php
