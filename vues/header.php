@@ -18,7 +18,7 @@
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
                 <title>Afficher la date et l'heure en temps rÃ©el en javascript</title>
         <script type="text/javascript" src="<?php JS ?>date_heure.js"></script>
-        
+       
         
 </head>
 

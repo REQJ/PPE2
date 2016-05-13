@@ -5,15 +5,16 @@ class AnnoncePdo extends MyPdo
               try
 		{ 
                 self::open();
-		$reponse = self::$connection->query('SELECT * FROM annonces');
+		$reponse = self::$connection->query('SELECT * FROM annonce');
 		$resultat = array();
 		
 		$resultat = $reponse->fetchAll();
 		
 		return $resultat;
                 
-                } catch (PDOException $ex) {
-                echo 'Échec requete : ' . $ex->getMessage();
+                } 
+                catch (PDOException $ex) {
+                    echo 'Échec requete : ' . $ex->getMessage();
               }
  	}
 
@@ -22,7 +23,7 @@ class AnnoncePdo extends MyPdo
 		{
                   self::open();
               
-		$reponse = self::$connection->query('SELECT * FROM annonces where id='.$id);
+		$reponse = self::$connection->query('SELECT * FROM annonce where id_annonce='.$id);
                 $uneAnnonce = $reponse->fetch();
 		
 		$reponse->closeCursor(); 
@@ -36,15 +37,19 @@ class AnnoncePdo extends MyPdo
         public static function create($uneAnnonce){
  		try
 		{
+                     setlocale(LC_TIME, 'fra_fra');
+                        $date=strftime('Le %d-%m-%y à %H:%M');  // Le 29/04/2016 à 11:07
                         self::open();
-			$requete = self::$connection->prepare('INSERT INTO annonces(titre, description) VALUES(:titre,:description)');
+			$requete = self::$connection->prepare('INSERT INTO annonce(titre_annonce, date_annonce, description_annonce, nbvue_annonce, actif_annonce, auteur_annonce, date_modif_annonce) VALUES(:titre,:date,:desc,:nbvue,:actif,:auteur,:datemod)');
                         $requete->bindValue(':titre', $uneAnnonce["titre"], PDO::PARAM_STR);
-			$requete->bindValue(':description', $uneAnnonce["description"], PDO::PARAM_STR);
+                        $requete->bindValue(':date', $uneAnnonce["date"], PDO::PARAM_STR);
+                        $requete->bindValue(':desc', $uneAnnonce["desc"], PDO::PARAM_STR);
+                        $requete->bindValue(':nbvue', $uneAnnonce["nbvue"], PDO::PARAM_STR);
+                        $requete->bindValue(':actif', $uneAnnonce["actif"], PDO::PARAM_STR);
+			$requete->bindValue(':auteur', $uneAnnonce["auteur"], PDO::PARAM_STR);
+                        $requete->bindValue(':datemod', $uneAnnonce["datemod"], PDO::PARAM_STR);
+                        
 			$requete->execute();
-			/* ou mais moins pratique
-			$req= "INSERT INTO news(titre, description, dte) VALUES('".$uneNews->titre."','".$uneNews->description."','".$uneNews->dte->format('Y-m-d')."')";
-			$this->connection->exec($req);
-			*/
 		}
 		catch (PDOException $e) {
 		    echo 'Échec requete : ' . $e->getMessage();
@@ -55,15 +60,15 @@ class AnnoncePdo extends MyPdo
  		try
 		{
                         self::open();
-			$requete = self::$connection->prepare('update annonces set titre=:titre, description=:description where id=:id');
-                        $requete->bindValue(':id', $uneAnnonce["id"], PDO::PARAM_STR);
+			$requete = self::$connection->prepare('update annonce set titre_annonce=:titre, description_annonce=:desc, date_annonce=:date, nbvue_annonce=:nbvue, actif_annonce=:actif, auteur_annonce=:auteur, date_modif_annonce=:datemod where id_annonce=:id');
                         $requete->bindValue(':titre', $uneAnnonce["titre"], PDO::PARAM_STR);
-			$requete->bindValue(':description', $uneAnnonce["description"], PDO::PARAM_STR);
+                        $requete->bindValue(':date', $uneAnnonce["date"], PDO::PARAM_STR);
+                        $requete->bindValue(':desc', $uneAnnonce["desc"], PDO::PARAM_STR);
+                        $requete->bindValue(':nbvue', $uneAnnonce["nbvue"], PDO::PARAM_STR);
+                        $requete->bindValue(':actif', $uneAnnonce["actif"], PDO::PARAM_STR);
+			$requete->bindValue(':auteur', $uneAnnonce["auteur"], PDO::PARAM_STR);
+                        $requete->bindValue(':datemod', $uneAnnonce["datemod"], PDO::PARAM_STR);
 			$requete->execute();
-			/* ou mais moins pratique
-			$req= "INSERT INTO news(titre, description, dte) VALUES('".$uneNews->titre."','".$uneNews->description."','".$uneNews->dte->format('Y-m-d')."')";
-			$this->connection->exec($req);
-			*/
 		}
 		catch (PDOException $e) {
 		    echo 'Échec requete : ' . $e->getMessage();
@@ -74,13 +79,9 @@ class AnnoncePdo extends MyPdo
  		try
 		{
                         self::open();
-			$requete = self::$connection->prepare('delete from annonces where id=:id');
+			$requete = self::$connection->prepare('delete from annonce where id_annonce=:id');
                         $requete->bindValue(':id', $id);
 			$requete->execute();
-			/* ou mais moins pratique
-			$req= "INSERT INTO news(titre, description, dte) VALUES('".$uneNews->titre."','".$uneNews->description."','".$uneNews->dte->format('Y-m-d')."')";
-			$this->connection->exec($req);
-			*/
 		}
 		catch (PDOException $e) {
 		    echo 'Échec requete : ' . $e->getMessage();
@@ -91,7 +92,7 @@ class AnnoncePdo extends MyPdo
               try
 		{ 
                 self::open();
-		$reponse = self::$connection->query("SELECT * FROM annonces where titre like '%$titre%'");
+		$reponse = self::$connection->query("SELECT * FROM annonce where titre_annonce like '%$titre%'");
 		$resultat = array();
 		
 		$resultat = $reponse->fetchAll();
@@ -107,7 +108,7 @@ class AnnoncePdo extends MyPdo
               try
 		{ 
                 self::open();
-		$reponse = self::$connection->query("SELECT COUNT(id) FROM annonces where titre like '%$titre%'");
+		$reponse = self::$connection->query("SELECT COUNT(id) FROM annonce where titre_annonce like '%$titre%'");
 		$resultat = array();
 		
 		$resultat = $reponse->fetchAll();

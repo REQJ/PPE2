@@ -12,7 +12,7 @@
 
 		<!-- Scripts -->
                         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-                        <script type="text/javascript" src="public/assets/fancybox/jquery.fancybox.pack.js"></script>
+                        <script type="text/javascript" src="fancybox/jquery.fancybox.pack.js"></script>
                         
                         
 			<script src="assets/js/jquery.min.js"></script>
@@ -24,11 +24,11 @@
 			<script src="assets/js/main.js"></script>
                         
                         <script>
-                        $(document).ready(function() {
+             $(document).ready(function() {
 
-	/* This is basic - uses default settings */
+	
 
-	$("#single_image").fancybox({
+	$(".single_image").fancybox({
 	'type'				:'image',
 	'hideOnContentClick'		: true,
 	'transitionIn'			:'elastic',
@@ -40,6 +40,8 @@
 	'titlePosition'			:'over'
 	});
 	
+        
+
 	
 });
 </script>

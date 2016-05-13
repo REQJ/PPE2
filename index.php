@@ -4,8 +4,15 @@
 	//require 'classe/News.php';
 	//require 'classe/User.php';
 	require 'pdo/MyPdo.php';
-	require 'pdo/NewsPdo.php';
+	//require 'pdo/NewsPdo.php';
 	require 'pdo/UserPdo.php';
+        require 'pdo/EmploiPdo.php';
+        require 'pdo/AnnoncePdo.php';
+        require 'pdo/CommentairePdo.php';
+        require 'pdo/ImagePdo.php';
+        require 'pdo/LienPdo.php';
+        require 'pdo/NouvellePdo.php';
+        require 'pdo/PhotoPdo.php';
 	session_start();
 	
 	include(VUES."header.php");
