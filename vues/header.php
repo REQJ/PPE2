@@ -51,7 +51,7 @@
 		else
 		{ ?>
 			
-							<form action="index.php?routeur=user&action=loginPost" method="POST" id="formCreate">
+							<form action="index.php?routeur=user&action=login" method="POST" id="formCreate">
                                                             
                                                                     <label for="id">ID</label>
                                                                      <input type="text" class="form-control" id="id" name="id" placeholder="Identifiant" data-validation="required"  data-validation-error-msg="L'id est obligatoire !">
@@ -81,7 +81,7 @@
 								<li><a href="index.php?routeur=forum" id="Forum-link" class="skel-layers-ignoreHref"><span class="icon fa-comments-o">Forum</span></a></li>
                                                                 <li><a href="index.php?routeur=epreuves" id="Description_des_Epreuves-link" class="skel-layers-ignoreHref"><span class="icon fa-binoculars">Description des épreuves</span></a></li>
 								<li><a href="index.php?routeur=emploi_du_temps" id="emploi_du_temps-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Emploi du Temps</span></a></li>
-								<li><a href="index.php?routeur=portfolio&action=getAll" id="Portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-briefcase">Portfolio</span></a></li>
+								<li><a href="index.php?routeur=portfolio" id="Portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-briefcase">Portfolio</span></a></li>
 								<li><a href="index.php?routeur=lien_utiles" id="liens_utiles-link" class="skel-layers-ignoreHref"><span class="icon fa-at">Liens utiles</span></a></li>
 								<li><a href="index.php?routeur=contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
                                                                 <li><a href="index.php?routeur=admin" id="panneau_admin-link" class="skel-layers-ignoreHref"><span class="icon fa-bars">Panneau d'administration</span></a></li>

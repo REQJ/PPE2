@@ -9,23 +9,21 @@ if(isset($_GET["action"]))
 
 	switch ($action) {
 		case 'getAll':
-			$lesPortfolios = UserPdo::getPorfolio();
-			include(VUES."portfolio.php");
+			$lesEpreuves = EpreuvePdo::getAll();
+			include(VUES."epreuve.php");
 				break;
 		
 		default:
-			$lesPortfolios = UserPdo::getPorfolio();
-			include(VUES."portfolio.php");
+			$lesEpreuves = EpreuvePdo::getAll();
+			include(VUES."epreuve.php");
 			break;
 	}
 	
 }
 //si pas d'action dans l'url
 else
-{
+{$lesEpreuves = EpreuvePdo::getAll();
 //	include("page/Accueil.php");
-    
-    $lesPortfolios = UserPdo::getPorfolio();
-  include(VUES."portfolio.php"); 
+    include(VUES."epreuve.php");
 }
 ?>

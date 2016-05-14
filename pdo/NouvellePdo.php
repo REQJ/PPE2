@@ -5,7 +5,7 @@ class NouvellePdo extends MyPdo
               try
 		{ 
                 self::open();
-		$reponse = self::$connection->query('SELECT * FROM nouvelle');
+		$reponse = self::$connection->query('SELECT * FROM nouvelle ORDER BY num_nouvelle desc');  //ORDER BY id desc 
 		$resultat = array();
 		
 		$resultat = $reponse->fetchAll();
@@ -16,6 +16,8 @@ class NouvellePdo extends MyPdo
                 echo 'Échec requete : ' . $ex->getMessage();
               }
  	}
+        
+        
 
 	public static function getOne($id){
               try
@@ -37,7 +39,7 @@ class NouvellePdo extends MyPdo
  		try
 		{
                         self::open();
-			$requete = self::$connection->prepare('INSERT INTO nouvelle(titre_nouvelle, daye_nouvelle, description_nouvelle) VALUES(:titre,:date,:desc)');
+			$requete = self::$connection->prepare('INSERT INTO nouvelle(titre_nouvelle, date_nouvelle, description_nouvelle) VALUES(:titre,:date,:desc)');
                         $requete->bindValue(':titre', $uneNouvelle["titre"], PDO::PARAM_STR);
                         $requete->bindValue(':date', $uneNouvelle["date"], PDO::PARAM_STR);
 			$requete->bindValue(':desc', $uneNouvelle["desc"], PDO::PARAM_STR);
@@ -52,7 +54,7 @@ class NouvellePdo extends MyPdo
  		try
 		{
                         self::open();
-			$requete = self::$connection->prepare('update nouvelle set titre_nouvelle=:titre, date_nouvelle=:date, description_nouvlle=:description where id_nouvelle=:id');
+			$requete = self::$connection->prepare('update nouvelle set titre_nouvelle=:titre, date_nouvelle=:date, description_nouvelle=:description where id=:id');
                         $requete->bindValue(':titre', $uneNouvelle["titre"], PDO::PARAM_STR);
                         $requete->bindValue(':date', /*date.now,*/ PDO::PARAM_STR);
 			$requete->bindValue(':desc', $uneNouvelle["desc"], PDO::PARAM_STR);
@@ -96,7 +98,7 @@ class NouvellePdo extends MyPdo
               try
 		{ 
                 self::open();
-		$reponse = self::$connection->query("SELECT COUNT(id_nouvelle) FROM nouvelle where titre_nouvelle like '%$titre%'");
+		$reponse = self::$connection->query("SELECT COUNT(id) FROM nouvelle where titre_nouvelle like '%$titre%'");
 		$resultat = array();
 		
 		$resultat = $reponse->fetchAll();

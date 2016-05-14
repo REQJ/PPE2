@@ -51,14 +51,13 @@ class UserPdo extends MyPdo
  	}
         public static function getPorfolio(){
               try
-		{
-               
-                                                
+		{                
                     self::open();                        
-                    $req = self::$connection->query("SELECT nom_utilisateur, prenom_utilisateur, portfolio_utilisateur FROM utilisateur");
-                    $portf = $req->fetch();
+                    $req = self::$connection->query("SELECT nom_utilisateur, prenom_utilisateur, portfolio_utilisateur FROM utilisateur order by nom_utilisateur, prenom_utilisateur asc");
+                    $resultat = array();
+                    $resultat = $req->fetchAll();
                     
-                                              
+                       return $resultat;                       
                 
                 } catch (PDOException $ex) {
                 echo 'Échec requete : ' . $ex->getMessage();

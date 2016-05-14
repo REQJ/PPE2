@@ -5,21 +5,17 @@ if(isset($_GET["action"]))
 	//Récupartion de l'action passée dans l'url
 	$action=$_GET["action"];
 
-	$connection = new UserPdo();
+	//$connection = new UserPdo();
 
 	switch ($action) {
+		
 		case 'create':
-			//	include(VUES."createaccount.php");
-				break;
-		case 'createPost':
 			$unLogin=$_POST["id"];
                         $unPassword=$_POST["mdp"];
                        UserPdo::create($unLogin, $unPassword);//// -> create uniquement sur site admin (et modifier car il faut importer fichier csv)
                        break;	
+		
 		case 'login':
-				include(VUES."login.php");
-				break;
-		case 'loginPost':
 			$unLogin=$_POST["id"];
                         $unPassword=$_POST["mdp"];
                        $res = UserPdo::connexion($unLogin, $unPassword);
@@ -41,7 +37,7 @@ if(isset($_GET["action"]))
                         
                         
                          include(VUES."success.php");
-                        // header('Location: index.php');----> BUG
+                         header('Location:index.php');//----> BUG
                          
 			}
                      var_dump($res);

@@ -9,11 +9,8 @@
 
 <section> 
         <body> 
-            <section>
-        <?php
-        $nbNouvelle = 0;  
-        foreach ($lesNouvelles as $nouvelle){
-        if ($nbNouvelle <=2){     
+        <?php 
+        foreach ($lesNouvelles as $nouvelle){    
         ?>
             
             <div class="principale_div2">  
@@ -22,18 +19,9 @@
                     <p><?php echo $nouvelle["titre_nouvelle"]?></p>
                     <p><?php echo $nouvelle["description_nouvelle"]?></p>
                 </div> 
-            </div> 
-            <?php $nbNouvelle = $nbNouvelle + 1; ?> 
-            
-            <?php
-        }  
+            </div>  
+        <?php
         }
-        ?>  
-        </section>
-        <div>
-            <a href="index.php?routeur=home&action=getAll"><button type="button" class="btn btn-primary">Voir plus</button>    
-        </div>
+        ?>   
         </body> 
-       
-</section>
-            
+</section>       

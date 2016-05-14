@@ -9,13 +9,13 @@ if(isset($_GET["action"]))
 
 	switch ($action) {
 		case 'getAll':
-			$lesPortfolios = UserPdo::getPorfolio();
-			include(VUES."portfolio.php");
+			$lesNouvelles = NouvellePdo::getAll();
+					include(VUES."home2.php");
 				break;
 		
 		default:
-			$lesPortfolios = UserPdo::getPorfolio();
-			include(VUES."portfolio.php");
+			$lesNouvelles = NouvellePdo::getAll();
+			include(VUES."home.php");
 			break;
 	}
 	
@@ -24,8 +24,9 @@ if(isset($_GET["action"]))
 else
 {
 //	include("page/Accueil.php");
+    $lesNouvelles = NouvellePdo::getAll();
+			include(VUES."home.php");
+			
     
-    $lesPortfolios = UserPdo::getPorfolio();
-  include(VUES."portfolio.php"); 
 }
 ?>

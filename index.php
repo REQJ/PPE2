@@ -33,36 +33,36 @@
 		//$connection = new NewsPdo(); // ----> 	a remetre plus tard !
 
 			switch ($routeur) {
-				case 'news':
-					include(CONTROLLER."NewsController.php");
-					break;
+				
 				case 'user':
 					include(CONTROLLER."UserController.php");
 					break;
 				case 'home':
-					include(VUES."home.php");
+					include(CONTROLLER."NouvelleController.php");
 					break;
 				case 'epreuves':
-                                    
-					include(VUES."epreuve.php");
+					include(CONTROLLER."EpreuveController.php");
 					break;
 				case 'emploi_du_temps':
-					include(VUES."emploi_temps.php");
+					include(CONTROLLER."EmploiController.php");
 					break;
 				case 'portfolio':
 					include(CONTROLLER."PortfolioController.php");
 					break;
 				case 'lien_utiles':
-					include(VUES."lien.php");
+					include(CONTROLLER."LienController.php");
 					break;
 				case 'contact':
-					include(VUES."contact.php");
+					include(CONTROLLER."ContactController.php");
 					break;
 				case 'admin':
 					include(VUES."admin.php");
 					break;
+                                case 'forum':
+                                        include(CONTROLLER."AnnonceController.php");
+                                        break;
 				default:
-					include(VUES."home.php");
+					include(CONTROLLER."NouvelleController.php");
 					break;
 			}
 			
@@ -70,7 +70,7 @@
 		//si pas de action dans l'url
 		else
 		{
-			include(VUES."home.php");
+			include(CONTROLLER."NouvelleController.php");
 		}
 		?>
 

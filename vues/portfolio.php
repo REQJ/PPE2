@@ -5,25 +5,45 @@
 								<h2>Portfolio</h2>
 							</header>
  <?php
-        // boucle sur le tableau lesAnnonces
+        // boucle sur le tableau 
+        $nbport=0;
+        //var_dump($lesPortfolios);
+        
+        //print_r($lesPortfolios);
         foreach ($lesPortfolios as $portfolio){
         ?>
-                                                <a href="#"><div class="block_left">
-						<img src="images/profil.jpg" Alt=""/>
-							<p class="nomPrenom"><?php echo $portfolio["nom_utilisateur"] ?></p>
-							<p class="email" >nicolas.bailly39380@gmail.com</p>
+                                       <a href=<?=$portfolio["portfolio_utilisateur"]?>>
+                                      <?php
+       // var_dump($portfolio["nom_utilisateur"]);
+                                      //echo $nbport + var_dump($name);
+                                      //$name=$portfolio['nom_utilisateur'];
+                                             $nom=$portfolio["nom_utilisateur"];
+                                              $prenom=$portfolio["prenom_utilisateur"];
+                                              $nom = strtoupper($nom); //Tout en MAJ
+                                              $prenom = ucfirst($prenom); //1er Lettre en MAJ
+
+                                      if($nbport%2==0){ ?>
+                                               <div class="block_left">
+                                      <?php }
+                                      else { ?>                                      
+                                                 <div class="block_right">  
+                                      <?php }?>
+						<img src="public/images/profil.jpg" Alt=""/> <!-- Metre dans la BDD la meme image pour tout le monde par defaut -->
+							<p class="nomPrenom"><?=$nom ." ". $prenom?></p>
+							<!--<p class="email" ></p> Si on veut pas donner notre mail a tt le monde !-->
 						</div></a>
                 <!-- Fin Modal -->
           
         <?php
+        $nbport+=1;
         }
         ?>            
-
+                </section>
 
 
 
 <!-------------------------------------------->
-					<section id="Portfolio" class="four">
+<!--					<section id="Portfolio" class="four">
 
 							<header>
 								<h2>Portfolio</h2>
@@ -220,4 +240,4 @@
 							<p class="nomPrenom">VIONNET Arnaud</p>
 							<p class="email" >a.vionnet97@gmail.com</p>
 						</div></a>
-					</section>
+					</section>-->
