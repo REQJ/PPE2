@@ -14,6 +14,7 @@
         require 'pdo/LienPdo.php';
         require 'pdo/NouvellePdo.php';
         require 'pdo/PhotoPdo.php';
+        require 'pdo/EpreuvePdo.php';
 	session_start();
 	
 	include(VUES."header.php");
@@ -42,6 +43,7 @@
 					include(VUES."home.php");
 					break;
 				case 'epreuves':
+                                    
 					include(VUES."epreuve.php");
 					break;
 				case 'emploi_du_temps':
