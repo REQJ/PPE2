@@ -50,7 +50,9 @@ if(isset($_GET["action"]))
 			 header('Location: index.php'); 
 			break;
 		default:
+			$lesNouvelles = NouvellePdo::getAll();
 			include(VUES."home.php");
+			
 			break;
 	}
 	
@@ -58,6 +60,7 @@ if(isset($_GET["action"]))
 //si pas d'action dans l'url
 else
 {
-	include("page/Accueil.php");
+	$lesNouvelles = NouvellePdo::getAll();
+			include(VUES."home.php");
 }
 ?>

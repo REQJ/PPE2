@@ -37,12 +37,13 @@
 			<!-- Logo -->
                                         
                                         
-						
-							<span class="image avatar48"><img src="public/images/hisoka_profil.jpg" alt="" /></span>
-							<h1 id="user" href="#lien poour aller gérer son compte"><?php echo $_SESSION["user"] ?></h1>
+                        <a href="index.php?routeur=user&action=account">
+							<span class="image avatar48" ><img src="public/images/hisoka_profil.jpg" alt="" /></span>
+                                                        <h1 id="user"><?php echo $_SESSION["user"] ?></h1>
+                        </a>
                                                         <a href="index.php?routeur=user&action=logout"><p>Deconnexion</p></a>
 						
-			
+                        
                        
                      <?php 
                             
