@@ -37,7 +37,7 @@ if(isset($_GET["action"]))
                         
                         
                          include(VUES."success.php");
-                         header('Location:index.php');//----> BUG
+                         header('Location: index.php');//----> BUG
                          
 			}
                      var_dump($res);
