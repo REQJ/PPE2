@@ -108,7 +108,7 @@ class AnnoncePdo extends MyPdo
               try
 		{ 
                 self::open();
-		$reponse = self::$connection->query("SELECT COUNT(id) FROM annonce where titre_annonce like '%$titre%'");
+		$reponse = self::$connection->query("SELECT COUNT(id_annonce) FROM annonce where titre_annonce like '%$titre%'");
 		$resultat = array();
 		
 		$resultat = $reponse->fetchAll();

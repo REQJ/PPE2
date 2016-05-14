@@ -5,7 +5,7 @@ class CommentairePdo extends MyPdo
               try
 		{ 
                 self::open();
-		$reponse = self::$connection->query('SELECT * FROM commentaire where fk_annonce_id='.$id);
+		$reponse = self::$connection->query('SELECT * FROM commentaire where id_comm='.$id);
 		$resultat = array();
 		
 		$resultat = $reponse->fetchAll();
@@ -38,7 +38,7 @@ class CommentairePdo extends MyPdo
  		try
 		{
                         self::open();
-			$requete = self::$connection->prepare('INSERT INTO commentaire(auteur_comm, date_comm, texte_comm, fk_annonce_id) VALUES(:auteur,:date,:texte,:fk_annonce_id)');
+			$requete = self::$connection->prepare('INSERT INTO commentaire(auteur_comm, date_comm, texte_comm, id_annonce) VALUES(:auteur,:date,:texte,:fk_annonce_id)');
                         $requete->bindValue(':auteur', $unCommentaire["auteur"], PDO::PARAM_STR);
 			$requete->bindValue(':date', $unCommentaire["date"], PDO::PARAM_STR);
                         $requete->bindValue(':texte', $unCommentaire["texte"], PDO::PARAM_STR);
@@ -54,7 +54,7 @@ class CommentairePdo extends MyPdo
  		try
 		{
                         self::open();
-			$requete = self::$connection->prepare('update commentaire set auteur_com=:auteur, date_comm=:date, texte_comm=:texte where id_comm=:id');
+			$requete = self::$connection->prepare('update commentaire set auteur_comm=:auteur, date_comm=:date, texte_comm=:texte where id_comm=:id');
                         $requete->bindValue(':auteur', $unCommentaire["auteur"], PDO::PARAM_STR);
                         $requete->bindValue(':date', $unCommentaire["date"], PDO::PARAM_STR);
 			$requete->bindValue(':texte', $unCommentaire["texte"], PDO::PARAM_STR);

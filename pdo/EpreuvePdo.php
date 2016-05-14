@@ -56,7 +56,7 @@ class EpreuvePdo extends MyPdo
  		try
 		{
                         self::open();
-			$requete = self::$connection->prepare('update epreuve set titre_epreuve=:titre, nom_epreuve=:nom, description_epreuve=:desc, coefficient_epreuve=:coeff, type_epreuve=:type, duree_epreuve=:duree where id=:id');
+			$requete = self::$connection->prepare('update epreuve set titre_epreuve=:titre, nom_epreuve=:nom, description_epreuve=:desc, coefficient_epreuve=:coeff, type_epreuve=:type, duree_epreuve=:duree where id_epreuve=:id');
                         $requete->bindValue(':id', $uneEpreuve["id"], PDO::PARAM_STR);
                         $requete->bindValue(':titre', $uneEpreuve["titre"], PDO::PARAM_STR);
                         $requete->bindValue(':nom', $uneEpreuve["nom"], PDO::PARAM_STR);

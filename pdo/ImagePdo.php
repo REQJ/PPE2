@@ -5,7 +5,7 @@ class ImagePdo extends MyPdo
               try
 		{ 
                 self::open();
-		$reponse = self::$connection->query('SELECT * FROM image where fk_annonce_id='.$id);
+		$reponse = self::$connection->query('SELECT * FROM image where id_annonce='.$id);
 		$resultat = array();
 		
 		$resultat = $reponse->fetchAll();
@@ -37,7 +37,7 @@ class ImagePdo extends MyPdo
  		try
 		{
                         self::open();
-			$requete = self::$connection->prepare('INSERT INTO image(titre_image, chemin_image, fk_annonce_id) VALUES(:titre,:chemin,:fk_annonce_id)');
+			$requete = self::$connection->prepare('INSERT INTO image(titre_image, chemin_image, id_annonce) VALUES(:titre,:chemin,:fk_annonce_id)');
                         $requete->bindValue(':titre', $uneImage["titre"], PDO::PARAM_STR);
 			$requete->bindValue(':chemin', $uneImage["chemin"], PDO::PARAM_STR);
                         $requete->bindValue(':fk_annonce_id', $uneImage["fk_annonce_id"]);

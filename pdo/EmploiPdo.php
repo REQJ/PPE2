@@ -33,7 +33,7 @@ class EmploiPdo extends MyPdo
               }
  	}
         
-        public static function create($unEmploi){
+        public static function create($unEmploi){ // MODIFIER TOUT
  		try
 		{
                         self::open();

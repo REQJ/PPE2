@@ -1,4 +1,28 @@
 <!-- Portfolio -->
+                                  <section id="Portfolio" class="four">
+
+							<header>
+								<h2>Portfolio</h2>
+							</header>
+ <?php
+        // boucle sur le tableau lesAnnonces
+        foreach ($lesPortfolios as $portfolio){
+        ?>
+                                                <a href="#"><div class="block_left">
+						<img src="images/profil.jpg" Alt=""/>
+							<p class="nomPrenom"><?php echo $portfolio["nom_utilisateur"] ?></p>
+							<p class="email" >nicolas.bailly39380@gmail.com</p>
+						</div></a>
+                <!-- Fin Modal -->
+          
+        <?php
+        }
+        ?>            
+
+
+
+
+<!-------------------------------------------->
 					<section id="Portfolio" class="four">
 
 							<header>

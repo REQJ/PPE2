@@ -28,42 +28,65 @@
     
 
 				<div class="top">
-				<!--<div >
+				<div >
+                                <div id="logo">
 		<?php
 		if (isset($_SESSION['user']))
-		{	echo "Vous êtes connecté en tant que :".$_SESSION['user']->login;
+		{	
 			?>
-			<a href="index.php?action=news&action=create">Create News </a>
-			<a href="index.php?action=news&action=getall">Voir les News </a>
-			<a href="index.php?action=user&action=logout">Déconnexion </a>
-			<?php
+			<!-- Logo -->
+                                        
+                                        
+						
+							<span class="image avatar48"><img src="public/images/hisoka_profil.jpg" alt="" /></span>
+							<h1 id="user" href="#lien poour aller gérer son compte"><?php echo $_SESSION["user"] ?></h1>
+                                                        <a href="index.php?routeur=user&action=logout"><p>Deconnexion</p></a>
+						
+			
+                       
+                     <?php 
+                            
+                        
 		}
 		else
-		{
-			echo '<a href="index.php?action=user&action=login">Se Connecter </a>';
-			echo '<a href="index.php?action=user&action=create">S\'enregister </a>';
-		}
+		{ ?>
+			
+							<form action="index.php?routeur=user&action=loginPost" method="POST" id="formCreate">
+                                                            
+                                                                    <label for="id">ID</label>
+                                                                     <input type="text" class="form-control" id="id" name="id" placeholder="Identifiant" data-validation="required"  data-validation-error-msg="L'id est obligatoire !">
+                                                           
+                                                             
+                                                              <label for="mdp">MDP</label>
+                                                                  <input type="password" id="mdp" name="mdp" placeholder="Mot de passe" class="form-control" rows="3" data-validation="required" data-validation-error-msg="le mdp est obligatoire !"></textarea>
+                                                                  
+                                                                     
+                                                            <button type="submit" class="btn btn-default">Login</button>
+                                                            </form>
+							
+						
+		<?php 
+                                
+                }
 		?>
-	</div>-->
+                                                        </div>
+	</div>
 
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="public/images/hisoka_profil.jpg" alt="" /></span>
-							<h1 id="title">Nounours39</h1>
-						</div>
+					
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.php?action=home" id="Accueil-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Accueil</span></a></li>
-								<li><a href="index.php?action=forum" id="Forum-link" class="skel-layers-ignoreHref"><span class="icon fa-comments-o">Forum</span></a></li>
-                                                                <li><a href="index.php?action=epreuves" id="Description_des_Epreuves-link" class="skel-layers-ignoreHref"><span class="icon fa-binoculars">Description des épreuves</span></a></li>
-								<li><a href="index.php?action=emploi_du_temps" id="emploi_du_temps-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Emploi du Temps</span></a></li>
-								<li><a href="index.php?action=portfolio" id="Portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-briefcase">Portfolio</span></a></li>
-								<li><a href="index.php?action=lien_utiles" id="liens_utiles-link" class="skel-layers-ignoreHref"><span class="icon fa-at">Liens utiles</span></a></li>
-								<li><a href="index.php?action=contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
-								<li><a href="index.php?action=admin" id="panneau_admin-link" class="skel-layers-ignoreHref"><span class="icon fa-bars">Panneau d'administration</span></a></li>
-							</ul>
+								<li><a href="index.php?routeur=home" id="Accueil-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Accueil</span></a></li>
+								<li><a href="index.php?routeur=forum" id="Forum-link" class="skel-layers-ignoreHref"><span class="icon fa-comments-o">Forum</span></a></li>
+                                                                <li><a href="index.php?routeur=epreuves" id="Description_des_Epreuves-link" class="skel-layers-ignoreHref"><span class="icon fa-binoculars">Description des épreuves</span></a></li>
+								<li><a href="index.php?routeur=emploi_du_temps" id="emploi_du_temps-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Emploi du Temps</span></a></li>
+								<li><a href="index.php?routeur=portfolio&action=getAll" id="Portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-briefcase">Portfolio</span></a></li>
+								<li><a href="index.php?routeur=lien_utiles" id="liens_utiles-link" class="skel-layers-ignoreHref"><span class="icon fa-at">Liens utiles</span></a></li>
+								<li><a href="index.php?routeur=contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+                                                                <li><a href="index.php?routeur=admin" id="panneau_admin-link" class="skel-layers-ignoreHref"><span class="icon fa-bars">Panneau d'administration</span></a></li>
+                                                        
+                                                        </ul>
 						</nav>
 
 				</div>

@@ -9,40 +9,52 @@ if(isset($_GET["action"]))
 
 	switch ($action) {
 		case 'create':
-			include("page/user/Create.php");
-			break;
-		case 'store':
-			$unUser=new News();
-			$unUser->login=$_POST["login"];
-			$unUser->password=md5($_POST["password"]);
-			$connection->create($unUser);
-			break;
+			//	include(VUES."createaccount.php");
+				break;
+		case 'createPost':
+			$unLogin=$_POST["id"];
+                        $unPassword=$_POST["mdp"];
+                       UserPdo::create($unLogin, $unPassword);//// -> create uniquement sur site admin (et modifier car il faut importer fichier csv)
+                       break;	
 		case 'login':
-			include("page/user/Login.php");
-			break;
-		case 'checkLogin':
-			$unUser=new User();
-			$unUser->login=$_POST["login"];
-			$unUser->password=md5($_POST["password"]);
-			$res=$connection->check($unUser);
-			var_dump($res);
-			if($res==1)
-			{
-				$_SESSION["user"]=$unUser;
-			    header('Location: index.php');  
+				include(VUES."login.php");
+				break;
+		case 'loginPost':
+			$unLogin=$_POST["id"];
+                        $unPassword=$_POST["mdp"];
+                       $res = UserPdo::connexion($unLogin, $unPassword);
+			if($res == False)
+			 {
+                            $message = "Identifiant ou mot de passe incorrect";
+                         include(VUES."success.php");
+                        // header( "refresh:2;url=index.php" );
+                            
+                         }
+                         else
+                        {
+			 //$_SESSION["user"]=$res["login_utilisateur"];
+                          $_SESSION["user"]=$unLogin;
+                         $message = "Identification réussi";
+                        $type=$res["id_type"];
+                        
+                       //  header("refresh:1;url=index.php");
+                        
+                        
+                         include(VUES."success.php");
+                        // header('Location: index.php');----> BUG
+                         
 			}
-			else
-			{
-			    header('Location: index.php?routeur=user&action=login');  
-			}
+                     var_dump($res);
+//                        echo("type utilisateur======");
+//                        var_dump($type);
 			
 			break;					
 		case 'logout':
 			session_destroy();
-			header('Location: index.php');  
+			 header('Location: index.php'); 
 			break;
 		default:
-			include("page/user/Login.php");
+			include(VUES."home.php");
 			break;
 	}
 	
@@ -52,3 +64,4 @@ else
 {
 	include("page/Accueil.php");
 }
+?>
