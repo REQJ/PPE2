@@ -30,9 +30,11 @@ if(isset($_GET["action"]))
                         {
 			 //$_SESSION["user"]=$res["login_utilisateur"];
                           $_SESSION["user"]=$unLogin;
+                          $idUser=$res['id_utilisateur'];
+                          
                          $message = "Identification réussi";
                         $type=$res["id_type"];
-                        
+                        //var_dump($idUtilisateur);
                        //  header("refresh:1;url=index.php");
                         
                         
@@ -49,6 +51,12 @@ if(isset($_GET["action"]))
 			session_destroy();
 			 header('Location: index.php'); 
 			break;
+                case 'account':
+                    $mesInfo = UserPdo::getInfo($_SESSION['user']);
+                 //   $mesInfo = isset($_SESSION['user']) ? UserPdo::getInfo($_SESSION['user']) : 'NULL';
+
+                    include(VUES.'account.php');
+                    break;
 		default:
 			$lesNouvelles = NouvellePdo::getAll();
 			include(VUES."home.php");

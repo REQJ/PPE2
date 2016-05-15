@@ -63,4 +63,18 @@ class UserPdo extends MyPdo
                 echo 'Échec requete : ' . $ex->getMessage();
               }
  	}
+        public static function getInfo($id){
+              try
+		{                
+                    self::open();                        
+                    $req = self::$connection->query("SELECT portfolio_utilisateur, mail_utilisateur, avatar_utilisateur FROM utilisateur WHERE login_utilisateur='".$id."'");
+                    $resultat = array();
+                    $resultat = $req->fetchAll();
+                    
+                       return $resultat;                       
+                
+                } catch (PDOException $ex) {
+                echo 'Échec requete : ' . $ex->getMessage();
+              }
+ 	}
 } 
