@@ -2745,6 +2745,9 @@
  margin-top: -10px;
  transition: margin-top box-shadow 0.3s;
 }
+.txt_nouvelle{
+    color:white;
+}
 /**--------------------------------**/
 .images{
 	height: 125px;

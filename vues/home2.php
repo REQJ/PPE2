@@ -16,8 +16,8 @@
             <div class="principale_div2">  
                 <div class="secondaire_div2" >
                     <div class="images"><img src="images/lycee.jpeg" Alt=""/></div>
-                    <p><?php echo $nouvelle["titre_nouvelle"]?></p>
-                    <p><?php echo $nouvelle["description_nouvelle"]?></p>
+                    <p class="txt_nouvelle"><?php echo $nouvelle["titre_nouvelle"]?></p>
+                    <p class="txt_nouvelle"><?php echo $nouvelle["description_nouvelle"]?></p>
                 </div> 
             </div>  
         <?php

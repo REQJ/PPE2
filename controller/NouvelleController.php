@@ -12,6 +12,10 @@ if(isset($_GET["action"]))
 			$lesNouvelles = NouvellePdo::getAll();
 					include(VUES."home2.php");
 				break;
+                case 'getOne' : 
+                        $uneNouvelle = NouvellePdo::getOne($_GET["num_nouvelle"]);
+                        include(VUES."nouvelle.php");
+                        break;
 		
 		default:
 			$lesNouvelles = NouvellePdo::getAll();
