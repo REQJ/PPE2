@@ -4,7 +4,11 @@
 							<header>
 								<h2>Liens Utiles</h2>
 							</header>
+<!-- RECUP LIEN EN PHP+SQL. SI tu a besoin d'aide, regarde la page portfolio ou epreuve !-->
 
+
+
+<!----------------------------------->
 
 							<div class="principale_div">
 

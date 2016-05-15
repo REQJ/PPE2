@@ -22,6 +22,13 @@
                                             <h4> Calendrier </h4>
 <a class="single_image" href="public/images/Grandetpetit/maxresdefaultgrand.jpg"><img src="public/images/Grandetpetit/maxresdefault.jpg"></a>
 
+
+<!-- Recupérer en SQL + PHP une image->l'emploi du temps -->
+
+
+
+<!---------------------------------------------------------->
+
 						<table id="emploi">
 							<tr class="ligneJours">
 								<td class="jour heure"></td>
