@@ -5,16 +5,19 @@
 		<link rel="icon" type="image/png" href="images/logo.ico" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		
+              <!-------------------->
+              <!--[if lte IE 8]><script src="public/assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="public/assets/css/main.css" />
 		<link rel="stylesheet" href="public/assets/js/js-menu.js" />
-                
+		<!--[if lte IE 8]><link rel="stylesheet" href="public/assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="public/assets/css/ie9.css" /><![endif]-->
+              <!-------------------->
                 <!-- script pour aggrandir une image-->
                 <link rel="stylesheet" href="public/assets/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
                 
                 
-		<!--[if lte IE 8]><link rel="stylesheet" href="public/assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="public/assets/css/ie9.css" /><![endif]-->
+		
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
              <!--   <title>Afficher la date et l'heure en temps rÃ©el en javascript</title>
         <script type="text/javascript" src="public/assets/date_heure.js"></script> -->
