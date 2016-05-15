@@ -2692,44 +2692,60 @@
 }
 
 .principale_div{
-	widows: 100%;
-	position: relative;
-	z-index: 10000;
+ widht: 100%;
+ position: relative;
+ z-index: 10000;
 }
-
+/**---------------------------**/
+.principale_div2{
+ widht: 100%;
+ position: relative;
+ z-index: 10000;
+        margin-left: 100px;
+}
 .secondaire_div{
-	border-radius: 0.5rem;
-	position: relative;
-	float: left;
-	background-color: #da4453;
-	width: 16%;
-	height: 250px;
-	margin-left: 3.333333333333333%;
-	transition: all 0.3s;
+ border-radius: 0.5rem;
+ position: relative;
+ float: left;
+ background-color: #da4453;
+ width: 16%;
+ height: 250px;
+ margin-left: 3.333333333333333%;
+ transition: all 0.3s;
+}
+.secondaire_div2{
+ border-radius: 1.5rem;
+ position: relative;
+ float: left;
+ background-color: #da4453;
+ width: 26%;
+ height: 350px;
+ margin-left: 3.333333333333333%;
+ transition: all 0.3s;
 }
 
 .principale_div div img{
-	width: 60%;
-	margin-top: 16%;
-	vertical-align: middle;
+ width: 60%;
+ margin-top: 16%;
+ vertical-align: middle;
 }
 
 .principale_div p{
-	text-align: center;
-	color: white;
-	width: 100%;
-	margin: 0;
-	padding-top: 45px;
+ text-align: center;
+ color: white;
+ width: 100%;
+ margin: 0;
+ padding-top: 45px;
 }
 
 
 .secondaire_div:hover{
-	box-shadow: 10px 10px #888888;
-	cursor: pointer;
-	margin-top: -10px;
-	transition: margin-top box-shadow 0.3s;
+ box-shadow: 10px 10px #888888;
+ cursor: pointer;
+ margin-top: -10px;
+ transition: margin-top box-shadow 0.3s;
 }
-
+/**--------------------------------**/
 .images{
 	height: 125px;
 	line-height: 125px;
