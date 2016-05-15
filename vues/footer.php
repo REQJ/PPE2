@@ -5,7 +5,7 @@
 
 				<!-- Copyright -->
 					<ul class="copyright">
-						<li>&copy; Copyright 2015</li>
+						<li>&copy; Copyright 2016</li>
 					</ul>
 
 			</div>
