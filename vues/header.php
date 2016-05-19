@@ -15,7 +15,8 @@
               <!-------------------->
                 <!-- script pour aggrandir une image-->
                 <link rel="stylesheet" href="public/assets/fancybox/source/jquery.fancybox.css" type="text/css" media="screen" />
-                
+                <link rel="stylesheet" href="public/assets/fancybox/source/helpers/jquery.fancybox-buttons.css" type="text/css" media="screen" />
+                <link rel="stylesheet" href="public/assets/fancybox/source/helpers/jquery.fancybox-thumbs.css" type="text/css" media="screen" />
                 
 		
                 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -39,14 +40,13 @@
 			?>
 			<!-- Logo -->
                                         
-                       
-                        <a href="index.php?routeur=user&action=account" title="Cliquer ici pour gérer votre compte">
-                           
+                                        
+                        <a href="index.php?routeur=user&action=account">
 							<span class="image avatar48" ><img src="public/images/hisoka_profil.jpg" alt="" /></span>
                                                         <h1 id="user"><?php echo $_SESSION["user"] ?></h1>
                         </a>
                                                         <a href="index.php?routeur=user&action=logout"><p>Deconnexion</p></a>
-                        
+						
                         
                        
                      <?php 

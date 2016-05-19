@@ -8,15 +8,22 @@ if(isset($_GET["action"]))
 	//$connection = new UserPdo();
 
 	switch ($action) {
+            case 'getAll':
+			$lesLiens = LienPdo::getAll();
+			include(VUES."lien.php");
+				break;
 		default:
-                    include(VUES."lien.php");
-                    break;
+                  $lesLiens = LienPdo::getAll();
+			include(VUES."lien.php");
+				break;
 	}
 	
 }
 //si pas d'action dans l'url
 else
 {
-	include(VUES."lien.php");
+	$lesLiens = LienPdo::getAll();
+			include(VUES."lien.php");
+				
 }
 ?>

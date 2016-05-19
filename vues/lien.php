@@ -10,7 +10,7 @@
 
 <!----------------------------------->
 
-							<div class="principale_div">
+<!--							<div class="principale_div">
 
 								<a href="http://www.l3pmres.info/1.html" ><div class="secondaire_div" >
 									<div class="images"><img src="images/lycee.jpeg" Alt=""/></div>
@@ -36,5 +36,29 @@
 									<div class="images"><img src="images/facebook.png" Alt=""/></div>
 									<p>Groupe SIO</p>
 								</div></a>
-							</div>
-					</section>
+							</div>-->
+<!--					</section>-->
+
+
+ <div class="principale_div">
+                                        <?php
+                                         // boucle sur le tableau lesAnnonces
+                                        //metre image
+                                        foreach ($lesLiens as $lien){
+                                         ?>
+                                       
+                                            <a href="<?=$lien["url_lien"] ?>" ><div class="secondaire_div" >
+									<div class="images"><img src="<?=$lien["pochette_lien"]?>" Alt=""/></div> <!--images/lycee.jpeg-->
+									<p><?=$lien["nom_lien"] ?></p>
+								</div></a>
+    
+                                     
+
+
+
+                                         <?php 
+        
+                                          } ?>
+
+   </div>
+</section>

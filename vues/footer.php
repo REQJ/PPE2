@@ -12,7 +12,8 @@
 
 		<!-- Scripts -->
                         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-                        <script type="text/javascript" src="public/fancybox/jquery.fancybox.pack.js"></script>
+                        <script type="text/javascript" src="public/assets/fancybox/jquery.fancybox.pack.js"></script>
+                        
                         
                         
 			<script src="public/assets/js/jquery.min.js"></script>
@@ -28,7 +29,7 @@
 
 	
 
-	$(".single_image").fancybox({
+	$("#single_image").fancybox({
 	'type'				:'image',
 	'hideOnContentClick'		: true,
 	'transitionIn'			:'elastic',

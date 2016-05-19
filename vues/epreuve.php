@@ -14,7 +14,9 @@ foreach($lesEpreuves as $epreuve){?>
                         <p>Coefficient: <?=$epreuve["coefficient_epreuve"]?></p>
                         <p>Type: <?=$epreuve["type_epreuve"]?></p>
 			</div>         
-<?php }?>                
+        <?php
+        }
+        ?>              
                                             
 
 <!--			<div class="accordionButton"><div class="btnTitle">Culture générale et expression</div><div class="plusButton"></div></div>

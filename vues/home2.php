@@ -8,20 +8,20 @@
     </section>
 
 <section> 
-        <body> <div class="principale_div2">  
+        <body> 
         <?php 
         foreach ($lesNouvelles as $nouvelle){    
         ?>
             
-            
+            <div class="principale_div2">  
                 <div class="secondaire_div2" >
                     <div class="images"><img src="images/lycee.jpeg" Alt=""/></div>
                     <p class="txt_nouvelle"><?php echo $nouvelle["titre_nouvelle"]?></p>
                     <p class="txt_nouvelle"><?php echo $nouvelle["description_nouvelle"]?></p>
                 </div> 
-           
+            </div>  
         <?php
         }
-        ?>    </div>  
+        ?>   
         </body> 
 </section>       
