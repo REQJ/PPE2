@@ -22,7 +22,7 @@ if(isset($_GET["action"]))
 			if($res == False)
 			 {
                             $message = "Identifiant ou mot de passe incorrect";
-                         include(VUES."success.php");
+                       //  include(VUES."success.php");
                         // header( "refresh:2;url=index.php" );
                             
                          }
@@ -30,17 +30,21 @@ if(isset($_GET["action"]))
                         {
 			 //$_SESSION["user"]=$res["login_utilisateur"];
                           $_SESSION["user"]=$unLogin;
-                         $message = "Identification réussi";
+                       /*  $message = "Identification réussi";
                         $type=$res["id_type"];
                         
-                       //  header("refresh:1;url=index.php");
-                        
-                        
-                         include(VUES."success.php");
-                         header('Location: index.php');//----> BUG
+                                              
+                        */
                          
+                       // header('Location: index.php');//----> BUG
+                          ?>
+<script language="javascript">
+document.location.href="index.php"    
+</script>
+                          <?php
+                         include(VUES."success.php");
 			}
-                     var_dump($res);
+                     //var_dump($res);
 //                        echo("type utilisateur======");
 //                        var_dump($type);
 			

@@ -24,7 +24,7 @@
 										<textarea name="message" placeholder="Message"></textarea>
 									</div>
 									<div class="12u$">
-										<input type="submit" value="Envoyé" />
+										<input type="submit" value="Envoyer" />
 									</div>
 								</div>
 							</form>

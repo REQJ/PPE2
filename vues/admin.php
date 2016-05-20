@@ -3,7 +3,7 @@
 						<div class="container">
 
 							<header>
-								<h2>Panneau admin</h2>
+								<h2>Panneau administrateur</h2>
 							</header>
 
 							

@@ -20,7 +20,7 @@
 </head>
 							</header>
                                             <h4> Calendrier </h4>
-<a id="single_image" href="public/images/Grandetpetit/maxresdefaultgrand.jpg"><img src="public/images/Grandetpetit/maxresdefault.jpg"></a>
+
 
 
 <!-- Recupérer en SQL + PHP une image->l'emploi du temps -->

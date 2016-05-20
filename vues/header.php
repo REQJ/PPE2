@@ -58,11 +58,11 @@
 			
 							<form action="index.php?routeur=user&action=login" method="POST" id="formCreate">
                                                             
-                                                                    <label for="id">ID</label>
+                                                                    <label for="id">Identifiant</label>
                                                                      <input type="text" class="form-control" id="id" name="id" placeholder="Identifiant" data-validation="required"  data-validation-error-msg="L'id est obligatoire !">
                                                            
                                                              
-                                                              <label for="mdp">MDP</label>
+                                                              <label for="mdp">Mot de passe</label>
                                                                   <input type="password" id="mdp" name="mdp" placeholder="Mot de passe" class="form-control" rows="3" data-validation="required" data-validation-error-msg="le mdp est obligatoire !"></textarea>
                                                                   
                                                                      
