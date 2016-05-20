@@ -89,8 +89,12 @@
 								<li><a href="index.php?routeur=portfolio" id="Portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-briefcase">Portfolio</span></a></li>
 								<li><a href="index.php?routeur=lien_utiles" id="liens_utiles-link" class="skel-layers-ignoreHref"><span class="icon fa-at">Liens utiles</span></a></li>
 								<li><a href="index.php?routeur=contact" id="contact-link" class="skel-layers-ignoreHref"><span class="icon fa-envelope">Contact</span></a></li>
+                                                                <?php
+                                                                               // var_dump( $_SESSION["type"]);
+                                                                if (isset($_SESSION["type"])){
+                                                                    if($_SESSION["type"]==1){?>
                                                                 <li><a href="index.php?routeur=admin" id="panneau_admin-link" class="skel-layers-ignoreHref"><span class="icon fa-bars">Panneau d'administration</span></a></li>
-                                                        
+                                                                    <?php }} ?>
                                                         </ul>
 						</nav>
 

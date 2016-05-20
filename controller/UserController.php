@@ -30,11 +30,11 @@ if(isset($_GET["action"]))
                         {
 			 //$_SESSION["user"]=$res["login_utilisateur"];
                           $_SESSION["user"]=$unLogin;
-                       /*  $message = "Identification réussi";
-                        $type=$res["id_type"];
-                        
+                       /*  $message = "Identification réussi";  */
+                        $_SESSION["type"]=$res["id_type"];
+                      //  var_dump($type);
                                               
-                        */
+                      
                          
                        // header('Location: index.php');//----> BUG
                           ?>

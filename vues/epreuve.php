@@ -7,12 +7,10 @@
 <?php
 foreach($lesEpreuves as $epreuve){?>
                                             
-                        <div class="accordionButton"><div class="btnTitle"><?=$epreuve["nom_epreuve"]?></div><div class="plusButton"></div></div>
+                        <div class="accordionButton"><div class="btnTitle"><?=$epreuve["nom_epreuve"]."   ".$epreuve["duree_epreuve"]."   Coeff:   ".$epreuve["coefficient_epreuve"]."   ".$epreuve["type_epreuve"]?></div><div class="plusButton"></div></div>
 			<div class="accordionContent">
                         <p><?=$epreuve["description_epreuve"]?></p>
-                        <p>Durée: <?=$epreuve["duree_epreuve"]?></p>
-                        <p>Coefficient: <?=$epreuve["coefficient_epreuve"]?></p>
-                        <p>Type: <?=$epreuve["type_epreuve"]?></p>
+                       
 			</div>         
         <?php
         }
